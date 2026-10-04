@@ -1,0 +1,15 @@
+[submodule "upstream/superpowers"]
+	path = upstream/superpowers
+	url = https://github.com/obra/superpowers.git
+[submodule "upstream/matt-pocock-skills"]
+	path = upstream/matt-pocock-skills
+	url = https://github.com/mattpocock/skills.git
+[submodule "upstream/vercel-agent-skills"]
+	path = upstream/vercel-agent-skills
+	url = https://github.com/vercel-labs/agent-skills.git
+[submodule "upstream/agent-browser"]
+	path = upstream/agent-browser
+	url = https://github.com/vercel-labs/agent-browser.git
+[submodule "upstream/ui-ux-pro-max"]
+	path = upstream/ui-ux-pro-max
+	url = https://github.com/nextlevelbuilder/ui-ux-pro-max-skill.git
