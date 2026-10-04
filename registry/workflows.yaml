@@ -1,0 +1,85 @@
+schema_version: 1
+task_workflows:
+  trivial: trivial
+  research: research
+  feature: feature
+  bugfix: bugfix
+  design: ui_design
+  refactor: refactor
+  roadmap: roadmap
+  review: review
+  test: test
+  security_review: security_review
+workflows:
+  trivial:
+    source: workflows/simple-task.md
+    phases:
+    - inspect
+    - implement
+    - verify
+  research:
+    source: workflows/research.md
+    phases:
+    - research
+    - synthesize
+    - verify
+  feature:
+    source: workflows/feature.md
+    phases:
+    - inspect
+    - clarify_if_needed
+    - plan_if_needed
+    - implement
+    - test
+    - review_if_needed
+    - verify
+  bugfix:
+    source: workflows/bugfix.md
+    phases:
+    - inspect
+    - debug
+    - test_if_needed
+    - implement
+    - verify
+  ui_design:
+    source: workflows/ui-design.md
+    phases:
+    - inspect
+    - design
+    - implement
+    - browser_verify_if_web
+    - ux_audit_if_web
+    - verify
+  refactor:
+    source: workflows/refactor.md
+    phases:
+    - inspect
+    - plan_if_needed
+    - implement
+    - test
+    - review_if_needed
+    - verify
+  roadmap:
+    source: workflows/roadmap.md
+    phases:
+    - research_if_needed
+    - roadmap
+    - verify
+  review:
+    source: workflows/review.md
+    phases:
+    - inspect
+    - review
+    - verify
+  test:
+    source: workflows/test.md
+    phases:
+    - inspect
+    - test
+    - verify
+  security_review:
+    source: workflows/security-review.md
+    phases:
+    - inspect
+    - security_review
+    - verify

@@ -1,0 +1,323 @@
+schema_version: 1
+skills:
+  brainstorming:
+    responsibility: requirements-and-design-clarification
+    source: upstream/superpowers/skills/brainstorming/SKILL.md
+    upstream: superpowers
+    enabled: true
+    enabled_by_default: true
+    task_types:
+    - feature
+    domains: []
+    detect:
+      when: ambiguous
+    conflicts: []
+    cost: medium
+    load_phase: planning
+    resources: []
+  writing-plans:
+    responsibility: implementation-planning
+    source: upstream/superpowers/skills/writing-plans/SKILL.md
+    upstream: superpowers
+    enabled: true
+    enabled_by_default: true
+    task_types:
+    - feature
+    - refactor
+    domains: []
+    detect:
+      when: plan_needed
+    conflicts: []
+    cost: medium
+    load_phase: planning
+    resources: []
+  executing-plans:
+    responsibility: planned-implementation
+    source: upstream/superpowers/skills/executing-plans/SKILL.md
+    upstream: superpowers
+    enabled: true
+    enabled_by_default: true
+    task_types:
+    - feature
+    - refactor
+    domains: []
+    detect:
+      when: plan_needed
+    conflicts: []
+    cost: medium
+    load_phase: implementation
+    resources: []
+  systematic-debugging:
+    responsibility: root-cause-debugging
+    source: upstream/superpowers/skills/systematic-debugging/SKILL.md
+    upstream: superpowers
+    enabled: true
+    enabled_by_default: true
+    task_types:
+    - bugfix
+    domains: []
+    detect:
+      when: always
+    conflicts: []
+    cost: low
+    load_phase: implementation
+    resources: []
+  test-driven-development:
+    responsibility: tdd
+    source: upstream/superpowers/skills/test-driven-development/SKILL.md
+    upstream: superpowers
+    enabled: true
+    enabled_by_default: true
+    task_types:
+    - feature
+    - bugfix
+    domains: []
+    detect:
+      when: regression_needed
+    conflicts: []
+    cost: medium
+    load_phase: implementation
+    resources: []
+  verification-before-completion:
+    responsibility: completion-verification
+    source: upstream/superpowers/skills/verification-before-completion/SKILL.md
+    upstream: superpowers
+    enabled: true
+    enabled_by_default: true
+    task_types:
+    - trivial
+    - feature
+    - bugfix
+    - design
+    - refactor
+    - test
+    - review
+    - security_review
+    - research
+    - roadmap
+    domains: []
+    detect:
+      when: always
+    conflicts: []
+    cost: low
+    load_phase: verification
+    resources: []
+  requesting-code-review:
+    responsibility: code-review-request
+    source: upstream/superpowers/skills/requesting-code-review/SKILL.md
+    upstream: superpowers
+    enabled: true
+    enabled_by_default: true
+    task_types:
+    - feature
+    - refactor
+    domains: []
+    detect:
+      when: review_needed
+    conflicts: []
+    cost: medium
+    load_phase: review
+    resources: []
+  receiving-code-review:
+    responsibility: code-review-response
+    source: upstream/superpowers/skills/receiving-code-review/SKILL.md
+    upstream: superpowers
+    enabled: true
+    enabled_by_default: true
+    task_types:
+    - review
+    domains: []
+    detect:
+      when: review_feedback
+    conflicts: []
+    cost: medium
+    load_phase: review
+    resources: []
+  using-git-worktrees:
+    responsibility: isolated-workspace
+    source: upstream/superpowers/skills/using-git-worktrees/SKILL.md
+    upstream: superpowers
+    enabled: true
+    enabled_by_default: true
+    task_types:
+    - feature
+    - bugfix
+    - refactor
+    domains: []
+    detect:
+      when: worktree_needed
+    conflicts: []
+    cost: medium
+    load_phase: planning
+    resources: []
+  dispatching-parallel-agents:
+    responsibility: independent-parallel-execution
+    source: upstream/superpowers/skills/dispatching-parallel-agents/SKILL.md
+    upstream: superpowers
+    enabled: true
+    enabled_by_default: true
+    task_types:
+    - feature
+    - research
+    - refactor
+    domains: []
+    detect:
+      when: independent_workstreams
+    conflicts: []
+    cost: medium
+    load_phase: implementation
+    resources: []
+  ui-ux-pro-max:
+    responsibility: design-intelligence
+    source: upstream/ui-ux-pro-max/.claude/skills/ui-ux-pro-max/SKILL.md
+    upstream: ui-ux-pro-max
+    enabled: true
+    enabled_by_default: true
+    task_types:
+    - design
+    domains:
+    - web
+    - frontend
+    - desktop
+    detect:
+      when: always
+    conflicts:
+    - anthropic-frontend-design
+    cost: medium
+    load_phase: planning
+    resources:
+    - upstream/ui-ux-pro-max/.claude/skills/ui-ux-pro-max/scripts/search.py
+    - upstream/ui-ux-pro-max/.claude/skills/ui-ux-pro-max/data
+    - upstream/ui-ux-pro-max/.claude/skills/ui-ux-pro-max/references
+  react-best-practices:
+    responsibility: react-implementation-quality
+    source: upstream/vercel-agent-skills/skills/react-best-practices/SKILL.md
+    upstream: vercel-agent-skills
+    enabled: true
+    enabled_by_default: true
+    task_types:
+    - feature
+    - bugfix
+    - design
+    - refactor
+    - review
+    - test
+    domains:
+    - react
+    - nextjs
+    detect:
+      when: touches_react
+    conflicts: []
+    cost: medium
+    load_phase: implementation
+    resources:
+    - upstream/vercel-agent-skills/skills/react-best-practices/rules
+  web-design-guidelines:
+    responsibility: web-ux-accessibility-audit
+    source: upstream/vercel-agent-skills/skills/web-design-guidelines/SKILL.md
+    upstream: vercel-agent-skills
+    enabled: true
+    enabled_by_default: true
+    task_types:
+    - design
+    - review
+    domains:
+    - web
+    detect:
+      when: ui_audit
+    conflicts: []
+    cost: medium
+    load_phase: review
+    resources: []
+  agent-browser:
+    responsibility: browser-e2e-verification
+    source: upstream/agent-browser/skills/agent-browser/SKILL.md
+    upstream: agent-browser
+    enabled: true
+    enabled_by_default: true
+    task_types:
+    - feature
+    - bugfix
+    - design
+    - test
+    - review
+    domains:
+    - web
+    detect:
+      when: browser_needed
+    conflicts: []
+    cost: medium
+    load_phase: verification
+    resources: []
+  research:
+    responsibility: technical-research
+    source: upstream/matt-pocock-skills/skills/engineering/research/SKILL.md
+    upstream: matt-pocock-skills
+    enabled: true
+    enabled_by_default: true
+    task_types:
+    - research
+    - roadmap
+    - feature
+    domains: []
+    detect:
+      when: research_needed
+    conflicts: []
+    cost: medium
+    load_phase: planning
+    resources: []
+  security-guidance:
+    responsibility: security-review
+    source: conditional/security-guidance/README.md
+    upstream: security-guidance
+    enabled: true
+    enabled_by_default: true
+    task_types:
+    - security_review
+    - feature
+    - bugfix
+    - refactor
+    - review
+    domains: []
+    detect:
+      when: security_sensitive
+    conflicts: []
+    cost: medium
+    load_phase: review
+    resources:
+    - conditional/security-guidance/hooks
+    - conditional/security-guidance/.claude-plugin/plugin.json
+  roadmap:
+    responsibility: long-term-roadmapping
+    source: custom/roadmap/SKILL.md
+    upstream: local
+    enabled: true
+    enabled_by_default: true
+    task_types:
+    - roadmap
+    domains: []
+    detect:
+      when: always
+    conflicts: []
+    cost: low
+    load_phase: planning
+    resources: []
+  anthropic-frontend-design:
+    responsibility: design-intelligence
+    source: optional/anthropic-frontend-design/SKILL.md
+    upstream: anthropic-frontend-design
+    enabled: false
+    enabled_by_default: false
+    task_types:
+    - design
+    domains:
+    - web
+    - frontend
+    - desktop
+    detect:
+      when: always
+    conflicts:
+    - ui-ux-pro-max
+    cost: medium
+    load_phase: planning
+    resources: []

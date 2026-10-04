@@ -1,0 +1,78 @@
+schema_version: 1
+domains:
+  web:
+    profile: profiles/web.md
+    evidence:
+    - package.json with web framework
+    - HTML entrypoints
+    - web server/routes
+  frontend:
+    profile: profiles/frontend.md
+    evidence:
+    - browser/mobile UI source
+    - components and styles
+  react:
+    profile: profiles/frontend.md
+    evidence:
+    - package.json dependencies.react or devDependencies.react
+  nextjs:
+    profile: profiles/web.md
+    evidence:
+    - package.json dependencies.next
+    - next.config.*
+  backend:
+    profile: profiles/backend.md
+    evidence:
+    - server routes
+    - API/database modules
+  desktop:
+    profile: profiles/desktop.md
+    evidence:
+    - Qt5/Qt6 in CMake
+    - QApplication/QMainWindow
+    - '*.ui'
+    - qml/
+  cpp:
+    profile: profiles/cpp.md
+    evidence:
+    - CMakeLists.txt
+    - '*.cpp'
+    - '*.hpp'
+    - conanfile.*
+    - vcpkg.json
+  embedded:
+    profile: profiles/embedded.md
+    evidence:
+    - '*.ioc'
+    - STM32Cube
+    - CMSIS
+    - FreeRTOS
+    - startup_*.s
+    - platformio.ini
+  ros2:
+    profile: profiles/ros2.md
+    evidence:
+    - package.xml plus ament_cmake/ament_python/rclcpp/rclpy
+    - ROS launch files
+  computer-vision:
+    profile: profiles/computer-vision.md
+    evidence:
+    - 'OpenCV/cv2/cv::'
+    - Pylon/Basler
+    - YOLO
+    - ONNX Runtime
+    - TensorRT
+  devops:
+    profile: profiles/devops.md
+    evidence:
+    - reverse proxy config
+    - Dockerfile
+    - CI workflows
+    - Terraform
+  security:
+    profile: profiles/security.md
+    evidence:
+    - auth/authz
+    - uploads
+    - untrusted paths or queries
+    - secrets/crypto
