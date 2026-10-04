@@ -1,0 +1,4 @@
+* text=auto eol=lf
+# Preserve vendored package bytes for locked SHA-256 integrity on every platform.
+conditional/** -text
+optional/** -text

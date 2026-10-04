@@ -1,0 +1,303 @@
+schema_version: 1
+cases:
+- id: proxy-timeout
+  request: Fix the websocket timeout through the reverse proxy.
+  repo_evidence:
+  - 'nginx.conf: websocket proxy'
+  decision:
+    tasks: &id001
+    - bugfix
+    domains: &id002
+    - backend
+    - devops
+    complexity: small
+    conditions: {}
+  expected_tasks: *id001
+  expected_domains: *id002
+  expected_include:
+  - systematic-debugging
+  - verification-before-completion
+  expected_exclude:
+  - ui-ux-pro-max
+  - react-best-practices
+  - research
+  - roadmap
+- id: react-design
+  request: Redesign this React product page so it feels premium and has a distinct
+    identity.
+  repo_evidence:
+  - 'package.json: dependencies react,next'
+  decision:
+    tasks: &id003
+    - design
+    domains: &id004
+    - web
+    - frontend
+    - react
+    - nextjs
+    complexity: medium
+    conditions:
+      touches_react: true
+      browser_needed: true
+      ui_audit: true
+  expected_tasks: *id003
+  expected_domains: *id004
+  expected_include:
+  - ui-ux-pro-max
+  - react-best-practices
+  - agent-browser
+  - web-design-guidelines
+  expected_exclude:
+  - anthropic-frontend-design
+  - systematic-debugging
+- id: robot-roadmap
+  request: Research quadruped robot architecture and create a six-month DIY roadmap.
+  repo_evidence: []
+  decision:
+    tasks: &id005
+    - research
+    - roadmap
+    domains: &id006 []
+    complexity: medium
+    conditions: {}
+  expected_tasks: *id005
+  expected_domains: *id006
+  expected_include:
+  - research
+  - roadmap
+  expected_exclude:
+  - ui-ux-pro-max
+  - test-driven-development
+  - agent-browser
+- id: camera-freeze
+  request: Basler acquisition freezes the Qt UI after a few minutes.
+  repo_evidence:
+  - 'CMakeLists.txt: Qt6,OpenCV,Pylon'
+  decision:
+    tasks: &id007
+    - bugfix
+    domains: &id008
+    - desktop
+    - cpp
+    - computer-vision
+    complexity: medium
+    conditions:
+      regression_needed: true
+  expected_tasks: *id007
+  expected_domains: *id008
+  expected_include:
+  - systematic-debugging
+  - verification-before-completion
+  expected_exclude:
+  - react-best-practices
+  - web-design-guidelines
+  - roadmap
+- id: rename
+  request: Rename VehicleConfig to CarConfig.
+  repo_evidence: []
+  decision:
+    tasks: &id009
+    - trivial
+    domains: &id010
+    - cpp
+    complexity: trivial
+    conditions: {}
+  expected_tasks: *id009
+  expected_domains: *id010
+  expected_include:
+  - verification-before-completion
+  expected_exclude:
+  - research
+  - ui-ux-pro-max
+  - brainstorming
+  expected_max_primary_skills: 1
+- id: auth-feature
+  request: Add role-based access checks to this API.
+  repo_evidence: []
+  decision:
+    tasks: &id011
+    - feature
+    domains: &id012
+    - backend
+    - security
+    complexity: medium
+    conditions:
+      plan_needed: true
+      regression_needed: true
+      security_sensitive: true
+  expected_tasks: *id011
+  expected_domains: *id012
+  expected_include:
+  - writing-plans
+  - executing-plans
+  - test-driven-development
+  - security-guidance
+  - verification-before-completion
+  expected_exclude:
+  - ui-ux-pro-max
+  - agent-browser
+  - research
+- id: react-repo-proxy
+  request: Our Next app gets websocket timeouts; fix nginx proxy settings.
+  repo_evidence:
+  - 'package.json: next,react'
+  - 'affected: nginx.conf'
+  decision:
+    tasks: &id013
+    - bugfix
+    domains: &id014
+    - backend
+    - devops
+    complexity: small
+    conditions: {}
+  expected_tasks: *id013
+  expected_domains: *id014
+  expected_include:
+  - systematic-debugging
+  expected_exclude:
+  - react-best-practices
+  - agent-browser
+  - ui-ux-pro-max
+- id: copy
+  request: Fix a typo in this product page heading.
+  repo_evidence: []
+  decision:
+    tasks: &id015
+    - trivial
+    domains: &id016
+    - web
+    - react
+    complexity: trivial
+    conditions: {}
+  expected_tasks: *id015
+  expected_domains: *id016
+  expected_include:
+  - verification-before-completion
+  expected_exclude:
+  - ui-ux-pro-max
+  - react-best-practices
+  - research
+  - agent-browser
+- id: security-review
+  request: Review upload paths for traversal and authorization bypass.
+  repo_evidence: []
+  decision:
+    tasks: &id017
+    - security_review
+    domains: &id018
+    - backend
+    - security
+    complexity: small
+    conditions: {}
+  expected_tasks: *id017
+  expected_domains: *id018
+  expected_include:
+  - security-guidance
+  - verification-before-completion
+  expected_exclude:
+  - ui-ux-pro-max
+  - research
+  - agent-browser
+- id: sdk-research
+  request: Compare official camera SDK APIs; do not change code.
+  repo_evidence: []
+  decision:
+    tasks: &id019
+    - research
+    domains: &id020
+    - cpp
+    - computer-vision
+    complexity: small
+    conditions: {}
+  expected_tasks: *id019
+  expected_domains: *id020
+  expected_include:
+  - research
+  - verification-before-completion
+  expected_exclude:
+  - executing-plans
+  - test-driven-development
+  - roadmap
+- id: desktop-design
+  request: Improve layout and keyboard navigation of this Qt settings dialog.
+  repo_evidence: []
+  decision:
+    tasks: &id021
+    - design
+    domains: &id022
+    - desktop
+    - cpp
+    complexity: small
+    conditions: {}
+  expected_tasks: *id021
+  expected_domains: *id022
+  expected_include:
+  - ui-ux-pro-max
+  - verification-before-completion
+  expected_exclude:
+  - agent-browser
+  - web-design-guidelines
+  - react-best-practices
+- id: optional-design
+  request: Use the Anthropic frontend-design approach for this landing page.
+  repo_evidence: []
+  decision:
+    tasks: &id023
+    - design
+    domains: &id024
+    - web
+    - frontend
+    complexity: medium
+    conditions:
+      browser_needed: true
+      ui_audit: true
+    design_owner: anthropic-frontend-design
+  expected_tasks: *id023
+  expected_domains: *id024
+  expected_include:
+  - anthropic-frontend-design
+  - web-design-guidelines
+  - agent-browser
+  expected_exclude:
+  - ui-ux-pro-max
+- id: ros-refactor
+  request: Refactor this ROS2 node while preserving topics and QoS.
+  repo_evidence:
+  - 'package.xml: ament_cmake,rclcpp'
+  decision:
+    tasks: &id025
+    - refactor
+    domains: &id026
+    - ros2
+    - cpp
+    complexity: small
+    conditions:
+      plan_needed: true
+  expected_tasks: *id025
+  expected_domains: *id026
+  expected_include:
+  - writing-plans
+  - executing-plans
+  - verification-before-completion
+  expected_exclude:
+  - research
+  - react-best-practices
+- id: embedded-test
+  request: Add a host-side regression test for ring buffer overflow.
+  repo_evidence: []
+  decision:
+    tasks: &id027
+    - test
+    domains: &id028
+    - embedded
+    - cpp
+    complexity: small
+    conditions: {}
+  expected_tasks: *id027
+  expected_domains: *id028
+  expected_include:
+  - verification-before-completion
+  expected_exclude:
+  - research
+  - agent-browser
+  - ui-ux-pro-max
